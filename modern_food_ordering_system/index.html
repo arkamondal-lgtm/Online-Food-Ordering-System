@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foodie — Online Food Ordering</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">F</span> foodie<span>.</span></a>
+    <nav class="nav-links">
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-button" id="openCart" aria-label="Open shopping cart">
+      <span>🛒</span> Cart <b id="cartCount">0</b>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="dot"></span> FRESH • FAST • DELICIOUS</p>
+        <h1>Good food.<br><em>Good mood.</em></h1>
+        <p class="hero-text">Your favorite meals, made fresh and delivered right to your door.</p>
+        <a class="primary-button" href="#menu">Explore menu <span>↗</span></a>
+        <div class="hero-stats">
+          <div><strong>4.8<span>★</span></strong><small>Customer rating</small></div>
+          <div><strong>30<span> min</span></strong><small>Average delivery</small></div>
+          <div><strong>100<span>+</span></strong><small>Fresh dishes</small></div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-circle"></div>
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=85" alt="Fresh pizza on a table">
+        <div class="floating-card delivery-card"><span>🚴</span><div><b>Fast delivery</b><small>At your doorstep</small></div></div>
+        <div class="floating-card rating-card"><span>⭐</span><div><b>4.8/5</b><small>Happy customers</small></div></div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+      <div class="section-heading">
+        <div><p class="eyebrow">OUR MENU</p><h2>Explore our <em>delicious</em> menu</h2></div>
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search dishes..." /></label>
+      </div>
+      <div class="category-row" id="categories">
+        <button class="category active" data-category="All">🍽️ All</button>
+        <button class="category" data-category="Pizza">🍕 Pizza</button>
+        <button class="category" data-category="Burger">🍔 Burgers</button>
+        <button class="category" data-category="Asian">🍜 Asian</button>
+        <button class="category" data-category="Dessert">🍰 Desserts</button>
+        <button class="category" data-category="Drinks">🥤 Drinks</button>
+      </div>
+      <div class="food-grid" id="foodGrid"></div>
+    </section>
+
+    <section class="promo" id="about">
+      <div><p class="eyebrow">A LITTLE EXTRA LOVE</p><h2>Hungry? We've got<br><em>you covered.</em></h2><p>Fresh ingredients, thoughtful recipes, and a little happiness in every bite.</p></div>
+      <div class="promo-badge"><span>🍴</span><strong>Made with<br>love & flavor</strong></div>
+    </section>
+  </main>
+
+  <footer id="contact"><a class="brand" href="#"><span class="brand-mark">F</span> foodie<span>.</span></a><p>Good food delivered with a smile.</p><small>© 2026 Foodie. Demo project for learning.</small></footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-panel" id="cartPanel" aria-label="Shopping cart">
+    <div class="cart-head"><div><p class="eyebrow">YOUR ORDER</p><h2>Shopping cart</h2></div><button id="closeCart" class="close-button" aria-label="Close cart">×</button></div>
+    <div class="cart-items" id="cartItems"><div class="empty-cart">Your cart is empty.<br><span>Add something tasty!</span> 🍜</div></div>
+    <div class="cart-footer"><div class="subtotal"><span>Subtotal</span><strong id="subtotal">₹0</strong></div><p class="delivery-note">Delivery fee calculated at checkout.</p><button class="checkout-button" id="checkoutButton">Checkout <span>→</span></button></div>
+  </aside>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
